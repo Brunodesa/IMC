@@ -30,24 +30,45 @@ namespace IMC
 
             if(checkBox1.Checked == true)
             {
-                g.gen = "masculino";
+                g.gen = g.masc;
             }
             if (checkBox2.Checked == true)
             {
-                g.gen = "feminino";
+                g.gen = g.fem;
             }
-
-            label5.Text = "Sendo que o seu género é " + g.gen + " o seu Índice \nde Massa Corporal é " + c.calc.ToString() + ".";
 
             if(checkBox1.Checked ==true & checkBox2.Checked==true || checkBox1.Checked ==false & checkBox2.Checked==false)
             {
                 MessageBox.Show("O seu género não está definido");
             }
 
-            /*if(c.peso > 22)
+            if(c.calc < 18.5)
             {
-                MessageBox.Show("Peso Abaixo da Média Recomendada");
-            }*/
+                label5.Text = "Sendo que o seu género é " + g.gen + " o seu Índice \n" +
+                    "de Massa Corporal é " + c.calc.ToString() + " com isto você está\n" +
+                    "abaixo da média (Magro, Menos que 27.5Kg) \n";
+            }
+
+            if (c.calc > 18.5 && c.calc < 24.9 )
+            {
+                label5.Text = "Sendo que o seu género é " + g.gen + " o seu Índice \n" +
+                    "de Massa Corporal é " + c.calc.ToString() + " com isto você está\n" +
+                    "dentro da média recomendada (Normal, de 27.5Kg a 37.1Kg) \n";
+            }
+
+            if (c.calc > 24.9 && c.calc < 30)
+            {
+                label5.Text = "Sendo que o seu género é " + g.gen + " o seu Índice \n" +
+                    "de Massa Corporal é " + c.calc.ToString() + " com isto você \n" +
+                    "ultrapassa a media recomendada (Sobrepeso, de 37.5Kg a 44.7Kg) \n";
+            }
+
+            if (c.calc > 30)
+            {
+                label5.Text = "Sendo que o seu género é " + g.gen + " o seu Índice \n" +
+                    "de Massa Corporal é " + c.calc.ToString() + " com isto você está\n" +
+                    "no nivel de Obesidade Morbida (Oesidade, Mais que 44.7Kg) \n";
+            }
 
         }
 
