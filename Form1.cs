@@ -23,6 +23,7 @@ namespace IMC
         {
             genero g = new genero();
             calcula c = new calcula();
+            texto t = new texto();
             c.peso = Convert.ToDouble(textBox1.Text);
             c.altura = Convert.ToDouble(textBox2.Text);
             c.calc = c.peso / (c.altura * c.altura);

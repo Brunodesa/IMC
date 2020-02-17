@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace IMC
 {
-    class texto
+    class lbs
     {
-        genero g = new genero();
-        calcula c = new calcula();
-
-
-        
-
+        string lbl1 = "Sendo que o seu género é ";
     }
 }
