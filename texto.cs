@@ -10,9 +10,5 @@ namespace IMC
     {
         genero g = new genero();
         calcula c = new calcula();
-
-
-        
-
     }
 }
